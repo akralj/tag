@@ -16,8 +16,8 @@ import (
 	"path/filepath"
 	"strings"
 
+	"github.com/akralj/tag"
 	"github.com/dhowden/itl"
-	"github.com/dhowden/tag"
 )
 
 func decodeLocation(l string) (string, error) {
