@@ -24,25 +24,25 @@ var atomTypes = map[int]string{
 
 // NB: atoms does not include "----", this is handled separately
 var atoms = atomNames(map[string]string{
-	"\xa9alb": "album",
-	"\xa9art": "artist",
-	"\xa9ART": "artist",
-	"aART":    "album_artist",
-	"\xa9day": "year",
-	"\xa9nam": "title",
-	"\xa9gen": "genre",
-	"trkn":    "track",
-	"\xa9wrt": "composer",
-	"\xa9too": "encoder",
-	"cprt":    "copyright",
-	"covr":    "picture",
-	"\xa9grp": "grouping",
-	"keyw":    "keyword",
-	"\xa9lyr": "lyrics",
-	"\xa9cmt": "comment",
-	"tmpo":    "tempo",
-	"cpil":    "compilation",
-	"disk":    "disc",
+	"©alb": "album",
+	"©art": "artist",
+	"©ART": "artist",
+	"aART": "album_artist",
+	"©day": "year",
+	"©nam": "title",
+	"©gen": "genre",
+	"trkn": "track",
+	"©wrt": "composer",
+	"©too": "encoder",
+	"cprt": "copyright",
+	"covr": "picture",
+	"©grp": "grouping",
+	"keyw": "keyword",
+	"©lyr": "lyrics",
+	"©cmt": "comment",
+	"tmpo": "tempo",
+	"cpil": "compilation",
+	"disk": "disc",
 })
 
 // Detect PNG image if "implicit" class is used
@@ -347,7 +347,7 @@ func (m metadataMP4) Disc() (int, int) {
 }
 
 func (m metadataMP4) Lyrics() string {
-	t, ok := m.data["\xa9lyr"]
+	t, ok := m.data["©lyr"]
 	if !ok {
 		return ""
 	}
@@ -355,7 +355,7 @@ func (m metadataMP4) Lyrics() string {
 }
 
 func (m metadataMP4) Comment() string {
-	t, ok := m.data["\xa9cmt"]
+	t, ok := m.data["©cmt"]
 	if !ok {
 		return ""
 	}
